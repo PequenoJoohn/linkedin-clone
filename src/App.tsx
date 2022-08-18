@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Profile from "./components/Profile";
+import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div
+        style={{
+          maxWidth: "90rem",
+          display: "flex",
+          margin: "0 auto",
+          flexDirection: "column",
+        }}
+      >
+        <div>
+          <Profile
+            fullName="Jonathan Matos"
+            role="Full Stack Developer na Hero99"
+            about="Pro-ativo, fundador da comunidade LabZone, instrutor de programação, #frontend, #reactjs."
+            location="Anápolis, Goiás, Brazil"
+            followers={120}
+            following={500}
+            company={[
+              {
+                name: "Hero99",
+                image:
+                  "https://media-exp1.licdn.com/dms/image/C4D0BAQErqcJKapUclg/company-logo_100_100/0/1542644296340?e=1668643200&v=beta&t=7pYr-irn6K2ymKJzweWmvzVLeYnJYe0JgbyDAyPp7d8",
+              },
+            ]}
+          />
+        </div>
+        <GlobalStyle />
+      </div>
+    </>
   );
 }
 
